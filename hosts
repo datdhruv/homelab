@@ -1,0 +1,2 @@
+[homelab]
+localhome ansible_host=localhost ansible_user=dhruv ansible_connection=ssh

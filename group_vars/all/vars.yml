@@ -1,0 +1,6 @@
+username: dhruv
+packages:
+  - vim
+  - neofetch
+  - htop
+  - python3-pip
