@@ -11,6 +11,12 @@ services:
     environment:
       - USER_UID=1000
       - USER_GID=1000
+      - APP_NAME=Dhruv's code hub
+      - DISABLE_REGISTRATION=true
+      - DEFAULT_USER_VISIBILITY=private
+      - DEFAULT_ORG_VISIBILITY=private
+      - DOMAIN=git.typdef.com
+      - ROOT_URL=https://git.typdef.com
     restart: always
     networks:
       - gitea
