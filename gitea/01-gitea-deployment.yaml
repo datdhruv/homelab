@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitea-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitea-app
+  template:
+    metadata:
+      name: gitea-pod
+      labels:
+        app: gitea-app
+    spec:
+      containers:
+        - name: gitea-container
+          image: gitea/gitea
+          ports:
+            - containerPort: 3000
+            - containerPort: 22
