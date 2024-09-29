@@ -16,9 +16,25 @@ spec:
       labels:
         app: gitea-app
     spec:
+      volumes:
+        - name: gitea-data
+          persistentVolumeClaim:
+            claimName: gitea-pvc
       containers:
         - name: gitea-container
           image: gitea/gitea
           ports:
             - containerPort: 3000
             - containerPort: 22
+          volumeMounts:
+            - name: gitea-data
+              mountPath: /data
+          livenessProbe:
+            httpGet:
+              path: /api/healthz
+              port: http
+            initialDelaySeconds: 200
+            timeoutSeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 10

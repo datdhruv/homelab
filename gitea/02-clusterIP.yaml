@@ -17,5 +17,5 @@ spec:
       targetPort: 22
   selector:
     app: gitea-app
-    type: ClusterIP
+  type: ClusterIP
       # clusterIP: 10.96.0.10
